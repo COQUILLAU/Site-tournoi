@@ -1,0 +1,152 @@
+.background{
+    display: flex;
+    background-color: #1a1a1ad9;
+}
+
+.background_all_card{
+    display: flex;
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+.background_all_card_tableau{
+    display: table;
+    min-height: 1px;
+    margin: 40px;
+    width: 100%;
+}
+
+.background_card{
+    background-color: #1e1d1d;
+    padding: 20px;
+    width: 45%;
+    height: auto;
+    border-radius: 16px;
+    margin: 16px;
+}
+
+.card_top{
+    display: flex;
+    width: 100%;
+}
+
+.card_left{
+    flex: 1;
+}
+
+.card_left .image_card{
+    height: 100%;
+    width: 100%;
+}
+
+.card_right{
+    background-color: transparent;
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+.card_right .titre{
+    font-size: 1.3em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 16px;
+}
+
+.card_right .contenu{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card_right .contenu .contenu_left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    color: #ffffffc6;
+}
+
+.card_right .contenu .contenu_left .participant, .card_right .contenu .contenu_left .heure_debut,.card_right .contenu .contenu_right{
+    flex: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_right .contenu .contenu_right .image_trophee{
+    height: 100%;
+    width: 100%;
+}
+
+.cashprize{
+    position: absolute;
+    bottom: -25px;
+    font-size: 1.4em;
+    background-color: rgba(16, 182, 223, 0.377);
+    width: 60%;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid #fff;
+}
+.card_bottom{
+    background-color: transparent;
+}
+.card_bottom .lien_tournoi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:rgb(16, 181, 223);
+    width: 100%;
+    font-size: 1.2em;
+    height: 42px;
+    border: 1px solid black;
+}
+.card_bottom .lien_tournoi:hover{
+    width: 100%;
+    font-size: 1.2em;
+    height: 42px;
+    background-color: #2b2a2a;
+}
+
+.lien_suppression{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:rgb(223, 30, 16);
+    width: 100%;
+    font-size: 1.2em;
+    height: 42px;
+    border: 1px solid black;
+}
+.lien_suppression:hover{
+    width: 100%;
+    font-size: 1.2em;
+    height: 42px;
+    background-color: #2b2a2a;
+}
+
+@media screen and (max-width: 1230px){
+    .background_all_card{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .background_all_card_tableau{
+        margin: 20px;
+    }
+  }
+  @media screen and (max-width: 800px){
+    .background_card{
+        width: auto;
+    }
+    .background_all_card_tableau{
+        margin: 0px;
+    }
+    .background_all_card{
+        border-radius: 0px;
+    }
+  }

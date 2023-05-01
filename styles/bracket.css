@@ -1,0 +1,77 @@
+
+.bracket {
+    display: flex;
+    font-size: 16px;
+    background-color: #1a1a1ad9;
+  }
+  
+  .round ,.round1,.round6{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .match,.match2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 22px;
+    padding: 8px 0;
+    flex-grow: 1;
+    position: relative;
+    transition: .2s ease-out;
+  }
+  .match::after{
+    content: "";
+    display: block;
+    border-top: 2px solid rgb(16, 181, 223);
+    border-right: 2px solid rgb(16, 181, 223);
+    height: 50%;
+    position: absolute;
+    right: -18px;
+    width: 18px;
+    top: 50%;
+  }
+  .match2::after{
+    content: "";
+    display: block;
+    border-bottom: 2px solid rgb(16, 181, 223);
+    border-right: 2px solid rgb(18, 195, 240);
+    height: 50%;
+    position: absolute;
+    right: -18px;
+    width: 18px;
+    bottom: 50%;
+  }
+
+  .round .match::before, .round .match2::before,.final::before{
+    content: "";
+    display: block;
+    width: 18px;
+    border-bottom: 4px dotted rgb(16, 181, 223);
+    margin-left: -2px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -22px;
+  }
+  .final{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 22px;
+    padding: 16px 0;
+    flex-grow: 1;
+    position: relative;
+    transition: .2s ease-out;
+  }
+
+  .player1, .player2 {
+    color: rgb(255, 255, 255);
+    width: 120px;
+    text-align: center;
+    border: 1px solid black;
+    padding: 4px;
+    height: 2em;
+  }
+
+  

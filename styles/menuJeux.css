@@ -1,0 +1,31 @@
+.menu_tournoi{
+    background-color: rgb(16, 72, 87);
+    width: 100%;
+    height: 58px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #fff;
+  }
+  .bouton_menu_tournoi{
+    background-color: rgba(10, 39, 47, 0.73);
+    display: flex;
+    height: 100%;
+    flex: 1;
+  }
+  
+  .lien_menu_tournoi{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+    color: #fff;
+    border-bottom: 4px solid rgba(255, 255, 255, 0.8);
+  }
+  
+  .lien_menu_tournoi:hover{
+    color: #fff;
+    border-bottom: 4px solid rgba(0, 243, 255, 0.8);
+  }

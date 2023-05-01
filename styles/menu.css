@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins","sans-serif";
+    text-decoration: none;
+}
+
+
+/* MENU DU SITE */
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(16, 72, 87);
+    height: 94px;
+    width: 100%;
+    box-shadow: 0px 20px 11px 0px rgb(0, 0, 0);
+}
+
+.menu_logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+}
+
+    .logo {
+        font-size: 2em;
+        color: #fff;
+        user-select: none;
+        text-decoration: none;
+    }
+
+.menu_nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+}
+
+    .navigation{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .navigation .links {
+        color: #ffffffb6;
+        flex: 1;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2em;
+    }
+
+    .navigation .links:hover{
+        background-color: rgba(10, 39, 47, 0.73);
+        color: #fff;
+    }
+
+
+    .menu_profil{
+    display: flex;
+    flex-direction: column;
+    flex: 0.5;
+    height: 100%;
+    width: 100%;
+    }
+
+    .menu_profil_1{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        width: 100%;
+        color: rgb(255, 255, 255);
+        flex: 1;
+        padding-left: 10%;
+    }
+
+    .texte_profil{
+        border-bottom: 2px solid rgb(23, 156, 189);
+        height: 100%;
+        padding-top: 20px;
+        margin-left: 3%;
+    }
+    .menu_profil_2{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        border-radius: 6px;
+        flex: 1;
+    }
+
+    .menu_profil_2_texte{
+        width: 100%;
+        color: #f00;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 10%;
+    }
+    .menu_profil_2:hover{
+        background: #ff0000; 
+    }
+    .menu_profil_2_texte:hover{
+        color: #ffffff;
+    }
+    .texte_role{
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: 1px solid white;
+        font-size: 12px;
+    }
+
+
+/* CORPS DU SITE */

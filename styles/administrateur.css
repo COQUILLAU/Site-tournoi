@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+  background-color: #fff;
+}
+.titre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    color: #1a1a1a;
+}
+.form{
+    width: 100%;
+}

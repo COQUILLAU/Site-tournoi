@@ -1,0 +1,53 @@
+.background_match{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1a1ad9;
+    height: 100vh;
+    width: 100%;
+}
+.background_match .match{
+    display: flex;
+    background-color: #1a1a1a;
+    height: 80%;
+    width: 90%;
+}
+
+.background_match .match .match_titre{
+    position: absolute;
+}
+
+.background_match .match .match_right{
+    display: flex;
+    background-color: #970c0c;
+    height: 100%;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.background_match .match .match_left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0c0fc7;
+    height: 100%;
+    width: 50%;
+}
+.background_match .match .match_vs{
+    position: absolute;
+    width: 22%;
+    right: 39%;
+    top: 40%;
+}
+
+.background_match .match .match_left .box_joueur , .background_match .match .match_right .box_joueur{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80%;
+    width: 50%;
+    background: color;
+    background-color: green;
+}

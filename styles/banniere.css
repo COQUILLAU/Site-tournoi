@@ -1,0 +1,19 @@
+    .vueJeu_banniere{
+        display: flex;
+        align-items: center;
+    }
+
+    .vueJeu_banniere .vueJeu_background{
+        position: relative;
+        height:300px; 
+        width:110%;
+        filter: blur(1px);
+    }
+
+    .vueJeu_banniere .vueJeu_logo{
+        position: absolute;
+        left: 8%;
+        width: 542px;
+        height: 270px;
+        box-shadow: 0px 0px 30px 5px #ffffff;
+    }

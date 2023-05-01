@@ -1,0 +1,63 @@
+.background_formulaire_all{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #1a1a1af0;
+    padding: 40px;
+}
+
+.background_formulaire{
+    background-color: #1a1a1ad9;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulaire_jeu{
+    background: #1a1a1a;
+    padding: 20px;
+    color:#fff;
+    border-radius: 16px;
+}
+
+.formulaire_jeu_titre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+    font-size: 1.4em;
+}
+
+.case{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    width: 100%;
+    font-size: 1.2em;
+    border: 1px solid #393636;
+    border-radius: 10px 16px 16px 10px;
+}
+
+.case_input{
+    background: rgb(16, 181, 223);
+    border: 3px solid black;
+    border-radius: 8px;
+    color: black;
+    width: 65%;
+    font-size: 16px;
+}
+
+.case_submit{
+    background: transparent;
+    width: 100%;
+    font-size: 1.4em;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 8px;
+    color: rgb(16, 181, 223);
+    height: 50px;
+    cursor: pointer;
+}
+.case_submit:hover{
+    background-color: #2b2a2a;
+}
