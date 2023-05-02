@@ -32,14 +32,37 @@
             $requeteSQL->execute();
             $resultat = $requeteSQL->fetch(PDO::FETCH_ASSOC);
 
+            //Select le match auquel le joueur est attribué
+            $requeteSQL2 = $bdd->prepare("SELECT * FROM matchs WHERE id_tournoi = :idJeu AND id_joueur1 = :pseudo");
+            $requeteSQL2->execute(array(':idJeu' => $idJeu, ':pseudo' => $pseudo));
+            $resultat2 = $requeteSQL2->fetch(PDO::FETCH_ASSOC);
+            
+            $resultat3 = null;
+
+            if (isset($resultat2['id_joueur1'])) {
+                echo $resultat2['id_joueur1'];
+            } else {
+                $requeteSQL3 = $bdd->prepare("SELECT * FROM matchs WHERE id_tournoi = :idJeu AND id_joueur2 = :pseudo");
+                $requeteSQL3->execute(array(':idJeu' => $idJeu, ':pseudo' => $pseudo));
+                $resultat3 = $requeteSQL3->fetch(PDO::FETCH_ASSOC);
+                echo $resultat3['id_joueur2'];
+            }
         ?>
         <div class="background_match">
             <div class="match">
                 <div class="match_titre">Id du match : <?php echo $resultat['id'];?></div>
                 <div class="match_left">
                     <div class ="box_joueur">
-                        <span>Nom du joueur : <?php echo $resultat['id_joueur1'];?></span>
-                        <p>SCORE : <?php echo $resultat['score_joueur1'];?></p>
+                    <span>Nom du joueur : <?php echo isset($resultat2['id_joueur1']) ? $resultat2['id_joueur1'] : $resultat3['id_joueur2']; ?></span>
+                    <p>SCORE : <?php echo isset($resultat2['score_joueur1']) ? $resultat2['score_joueur1'] : $resultat3['score_joueur2']; ?></p>
+
+                        <form class="" action="../../crud/match/score_insertion.php?id=<?php echo $resultat['id'];?>&id_joueur=<?php echo $resultat2['id_joueur1'];?>" method="POST">
+                            <div class="case">
+                                <input class="case_input" type="number" name="score" placeholder="">
+                            </div>
+                            <button type="submit">Validez votre score</button>
+                        </form>
+
                     </div>
                 </div>
                 <div class="match_vs">
@@ -47,39 +70,13 @@
                 </div>
                 <div class="match_right">
                     <div class ="box_joueur">
-                        <span>Nom du joueur : <?php echo $resultat['id_joueur2'];?></span>
-                        <p>SCORE : <?php echo $resultat['score_joueur2'];?></p>
-                    </div>
+                    <span>Nom du joueur : <?php echo $resultat3 == null ? $resultat2['id_joueur1'] : $resultat3['id_joueur2']; ?></span>
+                        <p>SCORE : <?php echo $resultat2['score_joueur2'];?></p>
+                    </div>0.
                 </div>
             </div>
         </div>
 
-        <?php // LE MENU DU JEUX ?>
-
-        <div class="menu_tournoi">
-            <div class="bouton_menu_tournoi">
-                <a href="#" class="lien_menu_tournoi" style="border-bottom: 4px solid rgb(16, 181, 223);">BRACKET</a>       
-            </div>
-            <?php 
-                if ($role == 0) { 
-                    ?>
-                    <div class="bouton_menu_tournoi" style="border-left: solid 2px black; color:blue;">
-                        <a href="vueMatch.php?nom=<?php echo $resultat['id']?>&id=<?php echo $joueur['id'];?>&id_tournoi=<?php echo $joueur['id_tournoi'];?>" class="lien_menu_tournoi">MATCH EN COURS</a>       
-                    </div>
-                    <?php 
-                } 
-            ?>
-
-            <?php if ($role == 1) { ?>
-                <div class="bouton_menu_tournoi" style="border-left: solid 2px black;">
-                    <?php if ($nb_joueurs == 2 || $nb_joueurs == 4 || $nb_joueurs == 8 || $nb_joueurs == 16 || $nb_joueurs == 32 || $nb_joueurs == 64 ) { ?>
-                        <a href="../../crud/match/match_insertion.php?id=<?php echo $id; ?>" class="lien_menu_tournoi">DEMARRER LE TOURNOI</a>
-                    <?php } else { ?>
-                        <span class="lien_menu_tournoi" style="opacity:0.5;">DEMARRER LE TOURNOI</span>
-                    <?php } ?>
-                </div>
-            <?php } ?>
-        </div>
 
     </body>
 </html>

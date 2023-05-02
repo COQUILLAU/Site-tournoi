@@ -40,15 +40,6 @@ include_once('../vueMenu.php');
         $joueurs[] = $joueur['id_joueur'];
     }
     
-    $joueur1 = '';
-    $joueur2 = '';
-    for ($i = 0; $i < $nb_joueurs; $i++) {
-        if ($i % 2 == 0) {
-            return $joueur1 = $joueurs[$i];
-        } else {
-            return $joueur2 = $joueurs[$i];
-        }
-    }
       
     $nb_matchs = 32;
 
@@ -129,7 +120,7 @@ include_once('../vueMenu.php');
         if ($role == 1 && empty($resultat5)) { ?>
             <div class="bouton_menu_tournoi" style="border-left: solid 2px black;">
                 <?php if ($nb_joueurs == 2 || $nb_joueurs == 4 || $nb_joueurs == 8 || $nb_joueurs == 16 || $nb_joueurs == 32 || $nb_joueurs == 64 ) { ?>
-                    <a href="../../crud/match/match_insertion.php?id=<?php echo $id ?>&id_joueur1=<?php echo $joueur1; ?>&id_joueur2=<?php echo $joueur2; ?>" class="lien_menu_tournoi">DEMARRER LE TOURNOI</a>
+                    <a href="../../crud/match/match_insertion.php?id=<?php echo $id ?>&joueurs=<?php echo implode(',', $joueurs); ?>" class="lien_menu_tournoi">DEMARRER LE TOURNOI</a>
                 <?php } else { ?>
                     <span class="lien_menu_tournoi" style="opacity:0.5;">DEMARRER LE TOURNOI</span>
                 <?php } ?>
@@ -581,3 +572,72 @@ include_once('../vueMenu.php');
         </div>
 <?php    } else {echo "LE TOURNOI N'A PAS COMMENCER";} ?>
 
+<?php /* <?php
+
+// Définir les noms des joueurs
+$joueurs = array(
+  "Joueur 1",
+  "Joueur 2",
+  "Joueur 3",
+  "Joueur 4",
+  "Joueur 5",
+  // Ajouter les noms des joueurs restants ici
+);
+
+// Mélanger les noms des joueurs de manière aléatoire
+shuffle($joueurs);
+
+// Créer un tableau pour stocker les gagnants
+$gagnants = array();
+
+// Boucle pour les matchs de premier tour
+for ($i = 0; $i < 64; $i += 2) {
+  $joueur1 = $joueurs[$i];
+  $joueur2 = $joueurs[$i+1];
+  // Générer un nombre aléatoire pour déterminer le gagnant
+  $resultat = rand(1,2);
+  if ($resultat == 1) {
+    array_push($gagnants, $joueur1);
+  } else {
+    array_push($gagnants, $joueur2);
+  }
+}
+
+// Boucle pour les matchs de deuxième tour
+for ($i = 0; $i < 32; $i += 2) {
+  $joueur1 = $gagnants[$i];
+  $joueur2 = $gagnants[$i+1];
+  // Générer un nombre aléatoire pour déterminer le gagnant
+  $resultat = rand(1,2);
+  if ($resultat == 1) {
+    array_push($gagnants, $joueur1);
+  } else {
+    array_push($gagnants, $joueur2);
+  }
+}
+
+// Boucle pour les matchs de troisième tour
+for ($i = 0; $i < 16; $i += 2) {
+  $joueur1 = $gagnants[$i];
+  $joueur2 = $gagnants[$i+1];
+  // Générer un nombre aléatoire pour déterminer le gagnant
+  $resultat = rand(1,2);
+  if ($resultat == 1) {
+    array_push($gagnants, $joueur1);
+  } else {
+    array_push($gagnants, $joueur2);
+  }
+}
+
+// Boucle pour les matchs de quatrième tour
+for ($i = 0; $i < 8; $i += 2) {
+  $joueur1 = $gagnants[$i];
+  $joueur2 = $gagnants[$i+1];
+  // Générer un nombre aléatoire pour déterminer le gagnant
+  $resultat = rand(1,2);
+  if ($resultat == 1) {
+    array_push($gagnants, $joueur1);
+  } else {
+    array_push($gagnants, $joueur2);
+  }
+}*/?>
